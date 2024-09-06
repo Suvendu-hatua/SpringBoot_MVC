@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Registration From</title>
+</head>
+<body>
+        <h3>Registration Form is Submitted Successfully</h3>
+        <div>
+            Student Name: <strong th:text="${student.firstName}+' '+${student.lastName}" ></strong>
+            <br><br>
+            Country Of the Student: <strong th:text="${student.country}"></strong>
+            <br><br>
+            Favourite Language: <strong th:text="${student.favouriteLanguage}"></strong>
+        </div>
+</body>
+</html>
