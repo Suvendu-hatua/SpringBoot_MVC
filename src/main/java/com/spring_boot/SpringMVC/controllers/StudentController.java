@@ -17,6 +17,12 @@ public class StudentController {
     @Value("${countries}")
     List<String> countries;
 
+    @Value("${favouriteLanguage}")
+    List<String>favouriteLanguage;
+
+    @Value("${favouriteSubjects}")
+    List<String> favouriteSubjects;
+
     @GetMapping("/registration")
     public String showRegistrationForm(Model theModel){
         //Creating an instance of Student Class
@@ -24,6 +30,8 @@ public class StudentController {
         //Adding instance to Model object.
         theModel.addAttribute("student",student);
         theModel.addAttribute("countries",countries);
+        theModel.addAttribute("favLanguage",favouriteLanguage);
+        theModel.addAttribute("favSubjects",favouriteSubjects);
 //        System.out.println(countries);
         return "registration-form";
     }

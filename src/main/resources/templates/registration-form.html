@@ -20,10 +20,10 @@
                 </select>
                 <br> </br>
                 Favourite Programming Language:
-                <input type="radio" th:field="${student.favouriteLanguage}" th:value="Python" >Python</input>
-                <input type="radio" th:field="${student.favouriteLanguage}" th:value="Java">Java</input>
-                <input type="radio" th:field="${student.favouriteLanguage}" th:value="'Go Lang'">Go Lang</input>
-
+                <input type="radio" th:each="language:${favLanguage}" th:field="${student.favouriteLanguage}" th:value="${language}" th:text="${language}" ></input>
+                <br><br>
+                Favourite Subjects:
+                <input type="checkbox" th:each="subject:${favSubjects}" th:field="${student.favouriteSubjects}" th:value="${subject}" th:text="${subject}" ></input>
                 <br><br>
                 <input type="submit" value="Submit" />
             </form>
