@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Save Employee</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="registration">
+        <h2> Employee Data has been successfully saved.</h2>
+        Employee Id: <strong th:text="${employee.employeeId}"></strong>
+        <br><br>
+        Employee Name: <strong th:text="${employee.firstName}+'  '+${employee.lastName}"></strong>
+        <br><br>
+        Employee Email: <strong th:text="${employee.email}"></strong>
+        <br><br>
+        Employee Reference Code: <strong th:text="${employee.referenceCode}"></strong>
+        <br><br>
+        Employee Age: <strong th:text="${employee.age}"></strong>
+        <br><br>
+        Employee Gender: <strong th:text="${employee.gender}"></strong>
+        <br><br>
+        Employee Country: <strong th:text="${employee.country}"></strong>
+    </div>
+</body>
+</html>

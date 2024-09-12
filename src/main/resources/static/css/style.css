@@ -1,7 +1,6 @@
 body{
-    background-color:lightblue;
-    text-align: center;
-}
+    background-color:lightgreen;
+    }
 p{
     font-weight: bold;
     font-size:large;
@@ -11,3 +10,11 @@ span{
     color: green;
     font-style: italic;
 }
+.registration{
+    width:35%;
+    margin:auto;
+}
+h2{
+text-align: center;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Employee Registration</title>
+    <style>
+        <!--        div{-->
+        <!--          width: 30%;-->
+        <!--          margin: auto;-->
+        <!--        }-->
+        .error{
+        color: red;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div>
+    <h2> Employee Registration From</h2>
+    <hr>
+    <div class="registration">
+        <form th:action="@{/employees/save}" th:object="${employee}" method="post">
+            Employee Id:
+            <input type="text" th:field="*{employeeId}" placeholder="Enter Employee Id"/>
+            <span th:if="${#fields.hasErrors('employeeId')}" th:errors="*{employeeId}" class="error"></span>
+            <br><br>
+            Employee FirstName:
+            <input type="text" th:field="*{firstName}" placeholder="Enter First Name"/>
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></span>
+            <br><br>
+            Employee LastName:
+            <input type="text" th:field="*{lastName}" placeholder="Enter Last Name"/>
+            <br> <br>
+            Employee Email:
+            <input type="text" th:field="*{email}" placeholder="Enter Employee Email Address" />
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
+            <br><br>
+            Reference Code:
+            <input  type="text" th:field="*{referenceCode}" placeholder="Enter Employee Reference Code."/>
+            <span th:if="${#fields.hasErrors('referenceCode')}" th:errors="*{referenceCode}" class="error"></span>
+            <br><br>
+            Employee Age:
+            <input type="number" th:field="*{age}" placeholder="Enter Employee Age"/>
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span>
+            <br> <br>
+            Employee Gender:
+            <input type="radio" th:field="*{gender}" th:value="Male">Male</input>
+            <input type="radio" th:field="*{gender}" th:value="Female">Female</input>
+            <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error"></span>
+            <br> <br>
+            Country:
+            <select th:field="*{country}">
+<!--                <option value="Select an Option">Select an Option</option>-->
+                <option th:each="tempCountry:${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+            </select>
+            <br> <br>
+            <input type="submit" value="register"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
